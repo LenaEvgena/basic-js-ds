@@ -8,20 +8,19 @@ const { Node } = require('../extensions/list-tree.js');
 */
 module.exports = class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.rootNode = null;
   }
 
   root() {
     // throw new NotImplementedError('Not implemented');
     // // remove line with error and write your code here
-    // if (!this.root) return null;
-    return this.root;
+    return this.rootNode;
   }
 
   add(data) {
     // throw new NotImplementedError('Not implemented');
     // // remove line with error and write your code here
-    this.root = addNodeInside(this.root, data);
+    this.rootNode = addNodeInside(this.rootNode, data);
 
     function addNodeInside(node, data) {
       if (!node) { return new Node(data); }
@@ -41,7 +40,7 @@ module.exports = class BinarySearchTree {
   has(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
-    return searchNodeInside(this.root, data);
+    return searchNodeInside(this.rootNode, data);
 
     function searchNodeInside(node, data) {
       if (!node) { return false; }
@@ -57,7 +56,7 @@ module.exports = class BinarySearchTree {
   find(data) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
-    return findNodeInside(this.root, data);
+    return findNodeInside(this.rootNode, data);
 
     function findNodeInside(node, data) {
       if (!node) { return null; }
@@ -73,7 +72,7 @@ module.exports = class BinarySearchTree {
   remove(data) {
     // throw new NotImplementedError('Not implemented');
     // // remove line with error and write your code here
-    this.root = removeNodeInside(this.root, data);
+    this.rootNode = removeNodeInside(this.rootNode, data);
 
     function removeNodeInside(node, data) {
       if (!node) { return null; }
@@ -116,7 +115,7 @@ module.exports = class BinarySearchTree {
   min() {
     // throw new NotImplementedError('Not implemented');
     // // remove line with error and write your code here
-    let minimum = itIsMin(this.root);
+    let minimum = itIsMin(this.rootNode);
 
     function itIsMin(node) {
       if (node.left === null) {
@@ -132,7 +131,7 @@ module.exports = class BinarySearchTree {
   max() {
     // throw new NotImplementedError('Not implemented');
     // // remove line with error and write your code here
-    let maximum = itIsMin(this.root);
+    let maximum = itIsMin(this.rootNode);
 
     function itIsMin(node) {
       if (node.right === null) {

@@ -35,8 +35,8 @@ module.exports = class Queue {
       this.end = this.start;
 
     } else {
-      this.end.next = nodeNew;
-      this.end = nodeNew;
+      this.end.next = nodeNew; //сначала сделали связку
+      this.end = nodeNew;//потом переместили указатель
     }
 
     this.size++;
@@ -44,8 +44,8 @@ module.exports = class Queue {
 
   dequeue() {
     // // remove line with error and write your code here
-    let currElem = this.start;
-    this.start = this.start.next;
+    let currElem = this.start;//запомнили
+    this.start = this.start.next;//перместили указатель
     this.size--;
 
     return currElem.value;
